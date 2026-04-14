@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+    <script>
+      // GitHub Pages SPA redirect
+      // Converts the path to a hash-based route so HashRouter can handle it
+      var path = window.location.pathname
+      var search = window.location.search
+      window.location.replace(
+        window.location.origin + '/#' + path + search
+      )
+    </script>
+  </head>
+  <body>
+    <p>Redirecting&hellip;</p>
+  </body>
+</html>

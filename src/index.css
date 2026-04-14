@@ -1,0 +1,372 @@
+@import "tailwindcss";
+
+/* ============================================
+   Dr. Alin N. Chera, DDS — Design System
+   Color palette derived from office exterior
+   (Craftsman blue trim, cream siding, gold logo)
+   with nautical interior accents
+   ============================================ */
+
+@theme {
+  /* Ocean Blues — from the Craftsman blue trim */
+  --color-ocean-900: #1B3A5C;
+  --color-ocean-800: #234A73;
+  --color-ocean-700: #2D5F8A;
+  --color-ocean-600: #3874A1;
+  --color-ocean-500: #4A8DBF;
+  --color-ocean-400: #6FA8D2;
+  --color-ocean-300: #94C3E5;
+  --color-ocean-200: #B9DCF0;
+  --color-ocean-100: #E8F1F8;
+  --color-ocean-50: #F3F8FC;
+
+  /* Cream — from the building siding */
+  --color-cream-50: #FDF8F0;
+  --color-cream-100: #F5EDE0;
+  --color-cream-200: #EBE1D0;
+  --color-cream-300: #DED2BC;
+
+  /* Gold — from the logo ring */
+  --color-gold-700: #8A7022;
+  --color-gold-600: #B8962E;
+  --color-gold-500: #CCA83A;
+  --color-gold-400: #D4B44A;
+  --color-gold-300: #E0C96E;
+
+  /* Sand — nautical warmth */
+  --color-sand-300: #D8CCAE;
+  --color-sand-200: #E8DCC8;
+  --color-sand-100: #F0E8D8;
+
+  /* Slate — from the roof */
+  --color-slate-900: #1A202C;
+  --color-slate-800: #2D3748;
+  --color-slate-700: #4A5568;
+  --color-slate-600: #636E7F;
+  --color-slate-500: #7B8794;
+  --color-slate-400: #A0AEC0;
+  --color-slate-300: #CBD5E0;
+  --color-slate-200: #E2E8F0;
+  --color-slate-100: #F1F5F9;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   Base styles — wrapped in @layer base so
+   Tailwind utility classes can override them
+   ============================================ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Offset anchor scroll targets so they clear the sticky navbar */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-slate-700);
+    background-color: var(--color-cream-50);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--color-slate-900);
+    line-height: 1.2;
+  }
+}
+
+/* ============================================
+   Accessibility — focus visible
+   ============================================ */
+
+*:focus-visible {
+  outline: 3px solid var(--color-ocean-500);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Thin scrollbar for modal content */
+.modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ocean-200) transparent;
+}
+
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 8px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--color-ocean-200);
+  border-radius: 3px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-ocean-400);
+}
+
+/* Skip nav link — visible only on focus for keyboard users */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 100;
+  padding: 12px 24px;
+  background: var(--color-ocean-900);
+  color: white;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.2s;
+}
+
+.skip-nav:focus {
+  top: 0;
+}
+
+/* ============================================
+   Nautical decorative utilities
+   ============================================ */
+
+/* Rope-knot horizontal rule */
+.rope-divider {
+  border: none;
+  height: 2px;
+  background:
+    repeating-linear-gradient(90deg,
+      var(--color-gold-600) 0px,
+      var(--color-gold-600) 8px,
+      transparent 8px,
+      transparent 16px);
+  opacity: 0.4;
+}
+
+/* Gold accent underline — nautical rope with knots */
+.heading-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.heading-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 10px;
+  background:
+    /* Knot — left */
+    radial-gradient(ellipse 8px 10px at 8px 5px, var(--color-gold-600) 55%, transparent 56%),
+    /* Knot — center */
+    radial-gradient(ellipse 8px 10px at 60px 5px, var(--color-gold-600) 55%, transparent 56%),
+    /* Knot — right */
+    radial-gradient(ellipse 8px 10px at 112px 5px, var(--color-gold-600) 55%, transparent 56%),
+    /* Twisted rope strand between knots */
+    repeating-linear-gradient(120deg,
+      var(--color-gold-700) 0px,
+      var(--color-gold-500) 1.5px,
+      var(--color-gold-300) 3px,
+      var(--color-gold-700) 4.5px);
+  -webkit-mask-image:
+    /* Let knots show at full height */
+    radial-gradient(ellipse 10px 12px at 8px 5px, black 55%, transparent 56%),
+    radial-gradient(ellipse 10px 12px at 60px 5px, black 55%, transparent 56%),
+    radial-gradient(ellipse 10px 12px at 112px 5px, black 55%, transparent 56%),
+    /* Thin rope line between knots */
+    linear-gradient(to bottom, transparent 2px, black 3px, black 7px, transparent 8px);
+  -webkit-mask-composite: source-over;
+  mask-image:
+    radial-gradient(ellipse 10px 12px at 8px 5px, black 55%, transparent 56%),
+    radial-gradient(ellipse 10px 12px at 60px 5px, black 55%, transparent 56%),
+    radial-gradient(ellipse 10px 12px at 112px 5px, black 55%, transparent 56%),
+    linear-gradient(to bottom, transparent 2px, black 3px, black 7px, transparent 8px);
+  mask-composite: add;
+}
+
+/* Nautical rope border for cards */
+.rope-border {
+  border: 4px solid transparent;
+  border-image: repeating-linear-gradient(135deg,
+      var(--color-gold-700) 0px,
+      var(--color-gold-500) 2px,
+      var(--color-gold-300) 4px,
+      var(--color-gold-600) 6px,
+      var(--color-gold-800) 8px) 8;
+}
+
+/* Nautical-themed card — dark ship deck wood */
+.nautical-card {
+  position: relative;
+  border: 1px solid rgba(180, 140, 60, 0.3);
+  border-bottom: 4px solid var(--color-gold-600);
+  background:
+    linear-gradient(180deg, rgba(40, 28, 18, 0.55) 0%, rgba(50, 35, 22, 0.7) 100%),
+    url('/wood-deck.png');
+  background-size: auto, 600px 600px;
+  background-position: center, 0 0;
+  color: #F5EDE0;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Each card shows a different section of the deck */
+.nautical-card:nth-child(1) {
+  background-position: center, 0 0;
+}
+
+.nautical-card:nth-child(2) {
+  background-position: center, -200px -100px;
+}
+
+.nautical-card:nth-child(3) {
+  background-position: center, -400px -300px;
+}
+
+.nautical-card:nth-child(4) {
+  background-position: center, -100px -450px;
+}
+
+.nautical-card:hover {
+  border-color: rgba(180, 140, 60, 0.5);
+  border-bottom-color: var(--color-gold-500);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.nautical-card h3 {
+  color: #F5EDE0;
+}
+
+.nautical-card p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gentle-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes modal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modal-slide-down {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-gentle-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+
+/* Staggered delays for lists/grids */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+.stagger-6 {
+  animation-delay: 0.6s;
+}
