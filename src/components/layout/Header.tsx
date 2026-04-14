@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Phone } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn, asset } from '@/lib/utils'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -92,7 +92,7 @@ export function Header() {
               )}
             >
               <img
-                src="/logo.svg"
+                src={asset('/logo.svg')}
                 alt="Alin N. Chera, DDS logo"
                 className="h-12 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
                 width="56"

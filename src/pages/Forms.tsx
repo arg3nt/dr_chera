@@ -2,6 +2,7 @@ import { SEOHead } from '@/components/shared/SEOHead'
 import { SectionHeading } from '@/components/shared/SectionHeading'
 import { Link } from 'react-router-dom'
 import { FileText, Download } from 'lucide-react'
+import { asset } from '@/lib/utils'
 
 const forms = [
   {
@@ -46,7 +47,7 @@ export function Forms() {
             {forms.map((form) => (
               <a
                 key={form.file}
-                href={form.file}
+                href={asset(form.file)}
                 download
                 className="group flex flex-col p-6 rounded-2xl bg-white border border-ocean-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >

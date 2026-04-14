@@ -1,5 +1,6 @@
 import { Phone, MapPin, Clock, AnchorIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { asset } from '@/lib/utils'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -9,7 +10,7 @@ export function Footer() {
       {/* Subtle nautical compass pattern in background */}
       <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true">
         <div className="absolute top-10 right-10 w-64 h-64">
-          <img src="/molar-outline.png" alt="" className="w-full h-full object-contain" />
+          <img src={asset('/molar-outline.png')} alt="" className="w-full h-full object-contain" />
         </div>
       </div>
 
@@ -19,7 +20,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <img
-                src="/logo.svg"
+                src={asset('/logo.svg')}
                 alt=""
                 className="h-10 w-auto brightness-0 invert"
                 width="40"

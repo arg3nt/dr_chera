@@ -1,5 +1,6 @@
 import { useRef, useEffect, useCallback } from 'react'
 import { Phone } from 'lucide-react'
+import { asset } from '@/lib/utils'
 
 /**
  * Attempt to match prefers-reduced-motion so we can skip the
@@ -141,7 +142,7 @@ export function Hero() {
       {/* Background image with gradient overlay */}
       <div className="absolute inset-0">
         <img
-          src="/office-exterior.jpg"
+          src={asset('/office-exterior.jpg')}
           alt="Dr. Chera's dental office exterior — a charming Craftsman-style building at 838 2nd St, Santa Rosa, CA"
           className="w-full h-full object-cover"
           style={{ objectPosition: 'center -20px' }}
@@ -162,7 +163,7 @@ export function Hero() {
       <div className="relative z-30 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-2">
         <div className="animate-fade-in-up">
           <img
-            src="/logo.svg"
+            src={asset('/logo.svg')}
             alt=""
             className="mx-auto h-36 md:h-48 lg:h-56 w-auto mb-8 drop-shadow-2xl invert"
             style={{ filter: 'invert(1) drop-shadow(0 0 24px rgba(255,255,255,0.25))' }}

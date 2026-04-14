@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils'
+import { cn, asset } from '@/lib/utils'
 
 interface SectionHeadingProps {
   title: string
@@ -28,7 +28,7 @@ export function SectionHeading({
       </Tag>
       {/* Nautical rope divider — hand-drawn illustration */}
       <img
-        src="/rope-divider.png"
+        src={asset('/rope-divider.png')}
         alt=""
         aria-hidden="true"
         className={cn('mt-2 h-8 w-[200px] object-contain', align === 'center' ? 'mx-auto' : '')}
