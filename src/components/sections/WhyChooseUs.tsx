@@ -95,7 +95,7 @@ export function WhyChooseUs() {
   const t = testimonials[current]
 
   return (
-    <section className="py-10 md:py-10 bg-cream-50">
+    <section id="why" className="py-10 md:py-10 bg-cream-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Why Choose Us"
@@ -178,11 +178,10 @@ export function WhyChooseUs() {
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      i === current
-                        ? 'bg-ocean-700 w-5'
-                        : 'bg-ocean-200 hover:bg-ocean-400'
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${i === current
+                      ? 'bg-ocean-700 w-5'
+                      : 'bg-ocean-200 hover:bg-ocean-400'
+                      }`}
                     aria-label={`Go to testimonial ${i + 1}`}
                     type="button"
                   />
