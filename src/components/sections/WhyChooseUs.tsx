@@ -21,7 +21,7 @@ const features = [
   {
     icon: Compass,
     title: 'Community Focused',
-    desc: 'Rooted in Santa Rosa and dedicated to Sonoma County families. Dr. Chera is your trusty neighborhood dentist.',
+    desc: 'Established in Santa Rosa and dedicated to Sonoma County families. Dr. Chera is your trusty neighborhood dentist.',
   },
 ]
 
@@ -65,6 +65,7 @@ const testimonials = [
 ]
 
 const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?q=Alin+N+Chera+DDS+Santa+Rosa&lrd=0x808447fd6766ee57:0x9a90149434c8d4e5,1,,,'
+const FACEBOOK_URL = 'https://www.facebook.com/AlinCheraDDS/'
 const YELP_URL = 'https://www.yelp.com/biz/alin-n-chera-dds-santa-rosa'
 
 function Stars() {
@@ -99,7 +100,7 @@ export function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Why Choose Us"
-          subtitle="More than just a dental office — a place where you feel at home."
+          subtitle="More than just a dental office — a place where you can be heard and well-cared-for."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -200,6 +201,15 @@ export function WhyChooseUs() {
             >
               <ExternalLink className="w-4 h-4" />
               Read Google Reviews
+            </a>
+            <a
+              href={FACEBOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-ocean-200 text-sm font-medium text-ocean-800 bg-white hover:bg-ocean-50 hover:border-ocean-300 hover:-translate-y-0.5 shadow-sm transition-all duration-200"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Read Facebook Reviews
             </a>
             <a
               href={YELP_URL}

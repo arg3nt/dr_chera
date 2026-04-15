@@ -56,7 +56,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 mt-0.5 text-gold-400 shrink-0" />
                 {/* Office hours — placeholder until confirmed */}
-                <span>Mon – Fri: 8:00 AM – 5:00 PM</span>
+                <span>Office hours by appointment</span>
               </li>
             </ul>
           </div>

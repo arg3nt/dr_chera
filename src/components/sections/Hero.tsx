@@ -185,7 +185,7 @@ export function Hero() {
           className="animate-fade-in-up stagger-2 text-lg sm:text-xl md:text-2xl text-ocean-100 max-w-2xl mx-auto mb-10 leading-relaxed font-light"
           style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5), 0 2px 12px rgba(27,58,92,0.5)' }}
         >
-          Steadfast treatment for families across Sonoma&nbsp;County.
+          Enduring treatment for families across Sonoma&nbsp;County.
         </p>
 
         <div className="animate-fade-in-up stagger-3 flex flex-col sm:flex-row items-center justify-center gap-4">

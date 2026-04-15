@@ -30,7 +30,7 @@ export function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Meet Dr. Chera"
-          subtitle="A local dentist dedicated to making your visit comfortable."
+          subtitle="A local dentist dedicated to your health in a safe and comfortable environment."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -55,7 +55,7 @@ export function About() {
             </p>
             <blockquote className="relative pl-6 border-l-4 border-gold-500 py-4 mt-2">
               <p className="font-heading text-xl italic leading-relaxed text-ocean-800">
-                "At my practice, we strive each day to give our patients the same careful attention that we give
+                "We strive each day to give our patients the same careful attention that we give
                 members of our own family. Dentistry is our expertise, and we share what we know with
                 our patients as we help them achieve and maintain healthy, beautiful smiles."
               </p>
